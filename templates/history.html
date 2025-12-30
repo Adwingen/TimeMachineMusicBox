@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Histórico de Playlists</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>🕘 Histórico</h1>
+    <p class="subtitle">Playlists já criadas</p>
+
+    {% if history %}
+        <ul class="history-list">
+            {% for item in history %}
+                <li class="history-item">
+                    <div>
+                        <strong>{{ item.date }}</strong><br>
+                        <small>{{ item.created_at }}</small>
+                    </div>
+
+                    <a href="{{ item.url }}" target="_blank">
+                        <button class="small-btn">Abrir 🎧</button>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="subtitle">Ainda não criaste nenhuma playlist.</p>
+    {% endif %}
+
+    <a href="/" style="margin-top:20px; display:block;">
+        <button style="background:#333; color:#fff;">
+            Voltar ⬅️
+        </button>
+    </a>
+</div>
+
+</body>
+</html>

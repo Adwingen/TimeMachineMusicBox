@@ -1,0 +1,44 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>🎶 Time Machine Music Box</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>🎶 Time Machine Music Box</h1>
+    <p class="subtitle">
+        Viaja no tempo e cria uma playlist com o Top 100 da Billboard
+    </p>
+
+<form method="post">
+    <label for="date">Escolhe a data</label>
+    <input
+        type="date"
+        id="date"
+        name="date"
+        required
+    >
+
+    <button type="submit">
+        Criar Playlist 🎧
+    </button>
+</form>
+
+<a href="/history" style="margin-top:20px; display:block;">
+    <button style="background:#333; color:#fff;">
+        Ver histórico 🕘
+    </button>
+</a>
+
+    <p class="footer">
+        Playlist criada diretamente na tua conta Spotify
+    </p>
+</div>
+
+</body>
+</html>
+

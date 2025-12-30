@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Playlist criada 🎉</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>🎉 Playlist criada!</h1>
+    <p class="subtitle">{{ date }} Billboard 100</p>
+
+    <a href="{{ playlist_url }}" target="_blank">
+        <button>Abrir no Spotify 🎧</button>
+    </a>
+</div>
+
+</body>
+</html>

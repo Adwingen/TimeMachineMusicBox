@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1DB954, #191414);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 40px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #1DB954;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(29, 185, 84, 0.5);
+}
+
+.footer {
+    margin-top: 25px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.progress-bar {
+    width: 100%;
+    background: #333;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.progress-bar div {
+    height: 20px;
+    width: 0%;
+    background: #1DB954;
+    transition: width 0.3s ease;
+}
+
+.history-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.history-item small {
+    opacity: 0.6;
+    font-size: 12px;
+}
+
+.small-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 8px;
+}
+
+

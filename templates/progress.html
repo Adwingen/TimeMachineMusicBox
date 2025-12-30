@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>A criar playlist...</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1 id="status">⏳ A iniciar...</h1>
+    <p id="message">Por favor aguarde</p>
+
+    <div class="progress-bar">
+        <div id="bar"></div>
+    </div>
+
+    <div id="actions" style="display:none; margin-top:20px;">
+        <a id="spotifyLink" target="_blank">
+            <button>Abrir no Spotify 🎧</button>
+        </a>
+
+        <a href="/" style="display:block; margin-top:10px;">
+            <button style="background:#333; color:#fff;">
+                Criar outra playlist 🔄
+            </button>
+        </a>
+    </div>
+
+</div>
+
+<script>
+async function pollProgress() {
+    const response = await fetch("/progress");
+    const data = await response.json();
+
+    document.getElementById("status").innerText = data.status;
+    document.getElementById("message").innerText = data.message;
+
+    if (data.total > 0) {
+        const percent = Math.round((data.current / data.total) * 100);
+        document.getElementById("bar").style.width = percent + "%";
+    }
+
+    if (data.status === "done") {
+        document.getElementById("actions").style.display = "block";
+        document.getElementById("spotifyLink").href = data.playlist_url;
+        return;
+    }
+
+    if (data.status !== "error") {
+        setTimeout(pollProgress, 500);
+    }
+}
+
+pollProgress();
+</script>
+
+</body>
+</html>
+
+
