@@ -1,20 +1,18 @@
-# Python
-__pycache__/
-*.pyc
-*.pyo
+# Env
+.env
 
-# Virtual environment
+# Virtual env
 .venv/
 venv/
 
-# Spotify / secrets
+# IDE
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+
+# Secrets
 token.txt
 
-# IDEs
-.idea/
-.vscode/
-
-# OS
-.DS_Store
-Thumbs.db
 

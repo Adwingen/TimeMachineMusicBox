@@ -9,6 +9,10 @@ from flask import jsonify
 import threading
 from history import save_playlist
 
+from dotenv import load_dotenv
+load_dotenv()
+
+
 
 
 progress_state = {
