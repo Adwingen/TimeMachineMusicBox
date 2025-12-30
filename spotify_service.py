@@ -2,11 +2,14 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from cover import create_cover_image
+import os
 
+CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
+CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
+REDIRECT_URI = os.getenv("SPOTIFY_REDIRECT_URI")
 
-CLIENT_ID = "070372a658624291b2fd5e2afa814a6b"
-CLIENT_SECRET = "75ffb74bfa844a59b4da7d9fcfd62697"
-REDIRECT_URI = "http://127.0.0.1:5000/callback"
+if not CLIENT_ID or not CLIENT_SECRET or not REDIRECT_URI:
+    raise RuntimeError("Variáveis de ambiente Spotify não configuradas")
 
 
 
