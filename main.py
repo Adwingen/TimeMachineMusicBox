@@ -5,10 +5,6 @@ from spotipy.oauth2 import SpotifyOAuth
 from pprint import pprint
 
 
-CLIENT_ID = "26176398fbaa49b88e95fa0a9059a325"
-CLIENT_SECRET = "1817168b9e0f432584958ef4962351cf"
-REDIRECT_URI = "https://example.com"
-
 def get_spotify_uris(sp, songs: list[str], year: str) -> list[str]:
     song_uris = []
 
